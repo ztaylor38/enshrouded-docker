@@ -13,16 +13,16 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update                        \
     && apt-get upgrade -y                 \
-    && apt-get install -y -qq             \
-        build-essential                   \
-        htop net-tools nano gcc g++ gdb   \
-        netcat curl wget zip unzip        \
-        cron sudo gosu dos2unix  jq       \
-        tzdata python3 python3-pip        \
-#        lib32z1 lib32gcc-s1 lib32stdc++6  \
-    && rm -rf /var/lib/apt/lists/*        \
-    && gosu nobody true                   \
-    && dos2unix
+  #  && apt-get install -y -qq             \
+  #      build-essential                   \
+  #      htop net-tools nano gcc g++ gdb   \
+  #      netcat curl wget zip unzip        \
+  #      cron sudo gosu dos2unix  jq       \
+   #     tzdata python3 python3-pip        \
+##        lib32z1 lib32gcc-s1 lib32stdc++6  \
+ #   && rm -rf /var/lib/apt/lists/*        \
+  #  && gosu nobody true                   \
+  #  && dos2unix
 
 RUN addgroup --system steam     \
     && adduser --system         \
