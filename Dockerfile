@@ -11,9 +11,8 @@ ENV PYTHONUNBUFFERED=1
 ENV DISPLAY=:0
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update                     \
-         apt-get upgrade -y                 \
-         apt-get install -y -qq             \
+RUN apt-get update && apt-get upgrade -y                 \
+   #      apt-get install -y -qq             \
         # build-essential                   \
   #     htop net-tools nano gcc g++ gdb   \
   #      netcat curl wget zip unzip        \
