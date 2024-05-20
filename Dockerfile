@@ -6,16 +6,16 @@ FROM steamcmd/steamcmd:ubuntu
 ARG WINEARCH=win64
 ARG WINE_MONO_VERSION=4.9.4
 
-ENV TZ=America/Los_Angeles
+ENV TZ=America/Chicago
 ENV PYTHONUNBUFFERED=1
 ENV DISPLAY=:0
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update                     
-   # && apt-get upgrade -y                 \
-  #  && apt-get install -y -qq             \
-  #      build-essential                   \
-  #      htop net-tools nano gcc g++ gdb   \
+         apt-get upgrade -y                 \
+         apt-get install -y -qq             \
+        # build-essential                   \
+  #     htop net-tools nano gcc g++ gdb   \
   #      netcat curl wget zip unzip        \
   #      cron sudo gosu dos2unix  jq       \
    #     tzdata python3 python3-pip        \
