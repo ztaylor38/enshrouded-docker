@@ -24,13 +24,13 @@ RUN apt-get update
   #  && gosu nobody true                   \
   #  && dos2unix
 
-RUN addgroup --system steam     \
-    && adduser --system         \
-      --home /home/steam        \
-      --shell /bin/bash         \
-      steam                     \
-    && usermod -aG steam steam  \
-    && chmod ugo+rw /tmp/dumps
+RUN addgroup --system steam    
+ #   && adduser --system         \
+  #    --home /home/steam        \
+  #    --shell /bin/bash         \
+ #     steam                     \
+ #   && usermod -aG steam steam  \
+ #   && chmod ugo+rw /tmp/dumps
 
 # Install wget
 RUN apt-get update
